@@ -46,9 +46,13 @@
         }
         
       });
-      console.log(inventorsBorn1500s);
+      
     // Array.prototype.map()
     // 2. Give us an array of the inventors first and last names
+      const fullNames = inventors.map((item)=>{
+          return `${item.first} ${item.last}`;
+      });
+      console.table(fullNames);
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
