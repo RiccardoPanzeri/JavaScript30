@@ -73,18 +73,34 @@
         }, 0 );
         console.log(totalYears);
     // 5. Sort the inventors by years lived
-
+        const sortedByYearsLived = inventors.sort((item1, item2)=>{
+            if((item1.passed - item1.year) > (item2.passed - item2.year)){
+              return -1;
+            }else{
+              return 1;
+            }
+        });
+       
     // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
     // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
-
+    
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+        const sortedByLastName = people.sort();
+        
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
-
+    const transportation = data.reduce(function(obj, item) {
+      if(!obj[item]){
+        obj[item]= 0;
+      }
+      obj[item]++;
+      return obj;
+    },{});
+    console.table(transportation);
   </script>
 </body>
 </html>
