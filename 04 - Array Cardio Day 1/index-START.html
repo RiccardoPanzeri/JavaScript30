@@ -52,10 +52,18 @@
       const fullNames = inventors.map((item)=>{
           return `${item.first} ${item.last}`;
       });
-      console.table(fullNames);
+      
 
     // Array.prototype.sort()
     // 3. Sort the inventors by birthdate, oldest to youngest
+    const sorted = inventors.sort((inventor1, inventor2)=>{
+        if(inventor1.year < inventor2.year){
+          return -1;
+        }else{
+          return 1;
+        }
+    });
+    console.table(sorted);
 
     // Array.prototype.reduce()
     // 4. How many years did all the inventors live all together?
